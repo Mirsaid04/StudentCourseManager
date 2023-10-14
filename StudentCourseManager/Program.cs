@@ -8,6 +8,36 @@ namespace StudentCourseManager
         {
             Student student = new Student(1118, "Mirsaid");
 
+            ValueManipulator valueManipulator = new ValueManipulator();
+            IntroductionAboutUser introductionAboutUser = new IntroductionAboutUser();
+
+            introductionAboutUser.IntroductionOfUser();
+            valueManipulator.ShowMenu();
+
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("We have this courses");
+                    break;
+                   
+                case 2:
+                    Console.WriteLine("You want to remove the courses");
+                    break;
+
+                case 3:
+                    Console.WriteLine("You want to check all your courses");
+                    break;
+                case 4: 
+                    Console.WriteLine("You want to exit");
+                    break;
+
+                default:
+                    Console.WriteLine("You entered invalid input");
+                    break;
+            }
+
             Course biology = new Course
             {
                 CourseName = "Biology"
@@ -18,9 +48,6 @@ namespace StudentCourseManager
                 CourseName = "Information"
             };
             Course english = new Course { CourseName = "English" };
-
-
-            /* student.Add(english);*/
 
             student.EnrolInCourse(information);
             student.EnrolInCourse(biology);
