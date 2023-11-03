@@ -16,7 +16,7 @@
         {
             CoursesEnrolled.Add(course);
         }
-        public void DropCourse(Course course)
+       /* public void DropCourse(Course course)
         {
             CoursesEnrolled.Remove(course);
         }
@@ -28,6 +28,6 @@
             {
                 Console.WriteLine(course.CourseName);
             }
-        }
+        }*/
     }
 }

@@ -6,62 +6,40 @@ namespace StudentCourseManager
     {
         static void Main(string[] args)
         {
-            Student student = new Student(1118, "Mirsaid");
-
-            ValueManipulator valueManipulator = new ValueManipulator();
-            IntroductionAboutUser introductionAboutUser = new IntroductionAboutUser();
-
-            introductionAboutUser.IntroductionOfUser();
-            valueManipulator.ShowMenu();
-
-            int choice = Convert.ToInt32(Console.ReadLine());
-
-            switch (choice)
+            string yesOrno = "";
+            do
             {
-                case 1:
-                    Console.WriteLine("We have this courses");
-                    break;
-                   
-                case 2:
-                    Console.WriteLine("You want to remove the courses");
-                    break;
+                ValueManipulator valueManipulator = new ValueManipulator();
+                valueManipulator.ShowMenu();
 
-                case 3:
-                    Console.WriteLine("You want to check all your courses");
-                    break;
-                case 4: 
-                    Console.WriteLine("You want to exit");
-                    break;
+                Course course = new Course();
 
-                default:
-                    Console.WriteLine("You entered invalid input");
-                    break;
-            }
+                int choice = Convert.ToInt32(Console.ReadLine());
 
-            Course biology = new Course
-            {
-                CourseName = "Biology"
-            };
+                switch (choice)
+                {
+                    case 1:
+                        course.enrollTheCourse();
+                        break;
 
-            Course information = new Course
-            {
-                CourseName = "Information"
-            };
-            Course english = new Course { CourseName = "English" };
+                    case 2:
+                        Console.WriteLine();
+                        break;
 
-            student.EnrolInCourse(information);
-            student.EnrolInCourse(biology);
-            student.DisplayEnrolledCourse();
+                    case 3:
+                        Console.WriteLine("You want to check all your courses");
+                        break;
+                    case 4:
+                        Console.WriteLine("You want to exit");
+                        break;
 
-            Console.WriteLine("After dropping");
-            student.DropCourse(information);
-
-            student.EnrolInCourse(english);
-            student.DisplayEnrolledCourse();
-
-
-            Console.WriteLine($"Student Name: {student.Name}");
-            Console.WriteLine($"Student Id : {student.StudentId}");
+                    default:
+                        Console.WriteLine("You entered invalid input");
+                        break;
+                }
+                Console.Write("Do you want to contine [y]/[n]: ");
+                yesOrno = Console.ReadLine();   
+            } while (yesOrno == "y");
         }
     }
 }
