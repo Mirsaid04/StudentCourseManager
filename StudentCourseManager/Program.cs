@@ -23,7 +23,7 @@ namespace StudentCourseManager
                         break;
 
                     case 2:
-                        Console.WriteLine();
+                        Console.WriteLine("You want to revome your any subject");
                         break;
 
                     case 3:
