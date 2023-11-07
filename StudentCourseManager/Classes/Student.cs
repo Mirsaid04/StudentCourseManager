@@ -16,18 +16,6 @@
         {
             CoursesEnrolled.Add(course);
         }
-       /* public void DropCourse(Course course)
-        {
-            CoursesEnrolled.Remove(course);
-        }
-        public void DisplayEnrolledCourse()
-        {
-            Console.WriteLine("Here are enrolled courses: ");
-
-            foreach (var course in CoursesEnrolled)
-            {
-                Console.WriteLine(course.CourseName);
-            }
-        }*/
+      
     }
 }
